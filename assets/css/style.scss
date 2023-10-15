@@ -713,7 +713,6 @@ p {
           p {
             text-align: center;
           }
-
         }
       }
     }
@@ -721,13 +720,12 @@ p {
 
   .package-modal-container {
     padding: 50px 15px;
-  
+
     .package-inner-container {
-  
       .package-type-wrap {
         flex-direction: column;
         justify-content: center;
-  
+
         .package-item {
           min-height: 200px;
           width: 100%;
@@ -736,7 +734,7 @@ p {
           flex-direction: row;
           align-items: center;
           gap: 40px;
-  
+
           .img-container {
             width: 150px;
             border-radius: 100%;
@@ -744,14 +742,14 @@ p {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-  
+
             > div {
               padding-top: 100%;
             }
           }
           .package-text-wrap {
             width: 100%;
-    
+
             h3,
             p {
               text-align: left;
