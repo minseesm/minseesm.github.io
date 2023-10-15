@@ -572,3 +572,192 @@ p {
     display: none;
   }
 }
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  .main-fixed-header {
+    padding: 0 20px;
+    height: 50px;
+
+    .main-menu {
+      width: 100px;
+      gap: 10px;
+
+      .main-menu-item {
+        span,
+        i {
+          font-size: 16px;
+          line-height: 28px;
+        }
+        i {
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+
+  .main-container {
+    .main-inner-container {
+      .main-title {
+        font-size: 28px;
+        transform: translate(-50%, -50%);
+      }
+
+      .menu-btn-wrap {
+        gap: 15px;
+        justify-content: center;
+        transform: none;
+        position: absolute;
+        bottom: 30px;
+        padding: 0 15px;
+
+        .menu-btn-container {
+          height: auto;
+
+          h2 {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-container {
+    .modal-inner-container {
+      width: 100%;
+      height: 100%;
+
+      .close-modal-btn {
+        top: 15px;
+        i {
+          color: #34dfdf;
+          font-size: 25px;
+          transition: 0.3s ease-in-out all;
+        }
+
+        i:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .snap-modal-container {
+    padding: 50px 0;
+
+    .snap-gallery {
+      padding: 0 15px;
+
+      .snap-title,
+      .snap-sub-title {
+        font-size: 25px;
+      }
+
+      .snap-text,
+      .snap-sub-text {
+        font-size: 20px;
+      }
+
+      .snap-title,
+      .snap-text {
+        text-align: right;
+      }
+
+      .snap-sub-title,
+      .snap-sub-text {
+        text-align: left;
+      }
+    }
+  }
+
+  .wedding-modal-container {
+    padding: 50px 15px;
+
+    .wedding-gallery {
+      height: 100%;
+
+      .gallery-item-wrap {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+
+        > div {
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        .img-container {
+          width: 80%;
+        }
+
+        .img-container > div {
+          padding-top: 133.26%;
+        }
+
+        .wedding-text-wrap {
+          h2 {
+            font-size: 25px;
+            padding-bottom: 0px;
+          }
+          h3 {
+            font-size: 18px;
+            padding-bottom: 15px;
+          }
+
+        }
+      }
+    }
+  }
+
+  .package-modal-container {
+    padding: 50px 15px;
+  
+    .package-inner-container {
+  
+      .package-type-wrap {
+        flex-direction: column;
+  
+        .package-item {
+          min-height: auto;
+          width: 100%;
+          min-width: 200px;
+          padding: 15px;
+          flex-direction: row;
+          align-items: center;
+          gap: 30px;
+  
+          .img-container {
+            width: 150px;
+            border-radius: 100%;
+            margin: 0 auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+  
+            > div {
+              padding-top: 100%;
+            }
+          }
+          .package-text-wrap {
+            width: 100%;
+    
+            h3,
+            p {
+              text-align: left;
+            }
+
+            h3 {
+              padding-top: 0;
+              padding-bottom: 10px;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

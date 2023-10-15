@@ -517,4 +517,150 @@ p {
 }
 .modal-active .about-container {
   display: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  .main-fixed-header {
+    padding: 0 20px;
+    height: 50px;
+  }
+  .main-fixed-header .main-menu {
+    width: 100px;
+    gap: 10px;
+  }
+  .main-fixed-header .main-menu .main-menu-item span,
+  .main-fixed-header .main-menu .main-menu-item i {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .main-fixed-header .main-menu .main-menu-item i {
+    padding-top: 5px;
+  }
+  .main-container .main-inner-container .main-title {
+    font-size: 28px;
+    transform: translate(-50%, -50%);
+  }
+  .main-container .main-inner-container .menu-btn-wrap {
+    gap: 15px;
+    justify-content: center;
+    transform: none;
+    position: absolute;
+    bottom: 30px;
+    padding: 0 15px;
+  }
+  .main-container .main-inner-container .menu-btn-wrap .menu-btn-container {
+    height: auto;
+  }
+  .main-container .main-inner-container .menu-btn-wrap .menu-btn-container h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .modal-container .modal-inner-container {
+    width: 100%;
+    height: 100%;
+  }
+  .modal-container .modal-inner-container .close-modal-btn {
+    top: 15px;
+  }
+  .modal-container .modal-inner-container .close-modal-btn i {
+    color: #34dfdf;
+    font-size: 25px;
+    transition: 0.3s ease-in-out all;
+  }
+  .modal-container .modal-inner-container .close-modal-btn i:hover {
+    color: var(--primary-color);
+  }
+  .snap-modal-container {
+    padding: 50px 0;
+  }
+  .snap-modal-container .snap-gallery {
+    padding: 0 15px;
+  }
+  .snap-modal-container .snap-gallery .snap-title,
+  .snap-modal-container .snap-gallery .snap-sub-title {
+    font-size: 25px;
+  }
+  .snap-modal-container .snap-gallery .snap-text,
+  .snap-modal-container .snap-gallery .snap-sub-text {
+    font-size: 20px;
+  }
+  .snap-modal-container .snap-gallery .snap-title,
+  .snap-modal-container .snap-gallery .snap-text {
+    text-align: right;
+  }
+  .snap-modal-container .snap-gallery .snap-sub-title,
+  .snap-modal-container .snap-gallery .snap-sub-text {
+    text-align: left;
+  }
+  .wedding-modal-container {
+    padding: 50px 15px;
+  }
+  .wedding-modal-container .wedding-gallery {
+    height: 100%;
+  }
+  .wedding-modal-container .wedding-gallery .gallery-item-wrap {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+  .wedding-modal-container .wedding-gallery .gallery-item-wrap > div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .wedding-modal-container .wedding-gallery .gallery-item-wrap .img-container {
+    width: 80%;
+  }
+  .wedding-modal-container .wedding-gallery .gallery-item-wrap .img-container > div {
+    padding-top: 133.26%;
+  }
+  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h2 {
+    font-size: 25px;
+    padding-bottom: 0px;
+  }
+  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h3 {
+    font-size: 18px;
+    padding-bottom: 15px;
+  }
+  .package-modal-container {
+    padding: 50px 15px;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap {
+    flex-direction: column;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap .package-item {
+    min-height: auto;
+    width: 100%;
+    min-width: 200px;
+    padding: 15px;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap .package-item .img-container {
+    width: 150px;
+    border-radius: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap .package-item .img-container > div {
+    padding-top: 100%;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap {
+    width: 100%;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap h3,
+  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap p {
+    text-align: left;
+  }
+  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap h3 {
+    padding-top: 0;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
