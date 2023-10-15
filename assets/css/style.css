@@ -198,7 +198,7 @@ p {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   -o-object-fit: cover;
      object-fit: cover;
@@ -212,7 +212,7 @@ p {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   -o-object-fit: cover;
      object-fit: cover;
@@ -259,7 +259,7 @@ p {
 
 .about-container {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
 }
 
@@ -536,6 +536,9 @@ p {
   }
   .main-fixed-header .main-menu .main-menu-item i {
     padding-top: 5px;
+  }
+  .main-container .main-inner-container {
+    height: calc(100vh - 80px);
   }
   .main-container .main-inner-container .main-title {
     font-size: 28px;

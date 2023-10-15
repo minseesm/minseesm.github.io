@@ -204,7 +204,7 @@ p {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
     object-fit: cover;
     opacity: 0.8;
@@ -218,7 +218,7 @@ p {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
     object-fit: cover;
     opacity: 0.8;
@@ -272,7 +272,7 @@ p {
 
 .about-container {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
 }
 
@@ -598,6 +598,7 @@ p {
 
   .main-container {
     .main-inner-container {
+      height: calc(100vh - 80px);
       .main-title {
         font-size: 28px;
         transform: translate(-50%, -50%);
