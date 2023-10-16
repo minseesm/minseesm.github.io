@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: Literata; /*a name to be used later*/
   src: url("../fonts/Literata/Literata-VariableFont_opsz,wght.ttf"); /*URL to font*/
-}
+} */
 
 @font-face {
   font-family: "IBMPlexSansKR-Regular";
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: bebas; /*a name to be used later*/
+  font-family: Bebas-Neue; /*a name to be used later*/
   src: url("../fonts/Bebas_Neue/BebasNeue-Regular.ttf"); /*URL to font*/
 }
 
@@ -26,7 +26,7 @@ body {
   color: #6f6f6f;
   box-sizing: border-box;
   line-height: 1.5em;
-  font-family: bebas;
+  font-family: Bebas-Neue;
   letter-spacing: 1px;
 }
 
