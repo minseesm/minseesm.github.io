@@ -1,7 +1,4 @@
-@font-face {
-  font-family: Literata; /*a name to be used later*/
-  src: url("../fonts/Literata/Literata-VariableFont_opsz\,wght.ttf"); /*URL to font*/
-}
+
 @font-face {
   font-family: 'IBMPlexSansKR-Regular';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
@@ -9,7 +6,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: bebas; /*a name to be used later*/
+  font-family: Bebas-Neue; /*a name to be used later*/
   src: url("../fonts/Bebas_Neue/BebasNeue-Regular.ttf"); /*URL to font*/
 }
 
@@ -23,7 +20,7 @@ body {
   color: #6f6f6f;
   box-sizing: border-box;
   line-height: 1.5em;
-  font-family: bebas;
+  font-family: Bebas-Neue;
   letter-spacing: 1px;;
 }
 
@@ -261,7 +258,6 @@ p {
       align-items: center;
       justify-content: center;
       gap: 20px;
-
       transform: translateY(100px);
 
       .menu-btn-container {
@@ -622,7 +618,7 @@ p {
         justify-content: center;
         transform: none;
         position: absolute;
-        bottom: 30px;
+        top: calc(100vh - 80px);
         padding: 0 15px;
         transform: translateY(0);
 
