@@ -2,16 +2,20 @@
   font-family: Literata; /*a name to be used later*/
   src: url("../fonts/Literata/Literata-VariableFont_opsz,wght.ttf"); /*URL to font*/
 }
+
 @font-face {
   font-family: "IBMPlexSansKR-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: bebas; /*a name to be used later*/
   src: url("../fonts/Bebas_Neue/BebasNeue-Regular.ttf"); /*URL to font*/
 }
+
 *,
 body {
   padding: 0;
@@ -214,7 +218,7 @@ p {
   height: 100%;
   z-index: -1;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.8;
   filter: brightness(0.8);
   transition: 0.3s ease-in-out all;
@@ -228,7 +232,7 @@ p {
   height: 100%;
   z-index: -1;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.8;
   filter: brightness(0.8);
 }
@@ -265,7 +269,11 @@ p {
   text-shadow: 2px 2px 4px #787878;
   cursor: pointer;
 }
-.main-container .main-inner-container .menu-btn-wrap .menu-btn-container h2:hover {
+.main-container
+  .main-inner-container
+  .menu-btn-wrap
+  .menu-btn-container
+  h2:hover {
   color: var(--primary-color);
   text-shadow: 2px 2px 4px #787878;
 }
@@ -426,12 +434,28 @@ p {
   background-repeat: no-repeat;
   background-position: center;
 }
-.wedding-modal-container .wedding-gallery .gallery-item-wrap .img-container > div {
+.wedding-modal-container
+  .wedding-gallery
+  .gallery-item-wrap
+  .img-container
+  > div {
   padding-top: 133.26%;
 }
-.wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h2,
-.wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h3,
-.wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap p {
+.wedding-modal-container
+  .wedding-gallery
+  .gallery-item-wrap
+  .wedding-text-wrap
+  h2,
+.wedding-modal-container
+  .wedding-gallery
+  .gallery-item-wrap
+  .wedding-text-wrap
+  h3,
+.wedding-modal-container
+  .wedding-gallery
+  .gallery-item-wrap
+  .wedding-text-wrap
+  p {
   padding-bottom: 15px;
 }
 .wedding-modal-container .wedding-gallery .pagination .dots {
@@ -475,7 +499,10 @@ p {
   align-items: center;
   gap: 15px;
 }
-.package-modal-container .package-inner-container .package-type-wrap .package-item {
+.package-modal-container
+  .package-inner-container
+  .package-type-wrap
+  .package-item {
   min-height: 500px;
   border-radius: 15px;
   width: 30%;
@@ -487,7 +514,11 @@ p {
   flex-direction: column;
   gap: 20px;
 }
-.package-modal-container .package-inner-container .package-type-wrap .package-item .img-container {
+.package-modal-container
+  .package-inner-container
+  .package-type-wrap
+  .package-item
+  .img-container {
   width: 150px;
   border-radius: 100%;
   margin: 0 auto;
@@ -495,14 +526,31 @@ p {
   background-repeat: no-repeat;
   background-position: center;
 }
-.package-modal-container .package-inner-container .package-type-wrap .package-item .img-container > div {
+.package-modal-container
+  .package-inner-container
+  .package-type-wrap
+  .package-item
+  .img-container
+  > div {
   padding-top: 100%;
 }
-.package-modal-container .package-inner-container .package-type-wrap .package-item h3 {
+.package-modal-container
+  .package-inner-container
+  .package-type-wrap
+  .package-item
+  h3 {
   padding-top: 50px;
 }
-.package-modal-container .package-inner-container .package-type-wrap .package-item h3,
-.package-modal-container .package-inner-container .package-type-wrap .package-item p {
+.package-modal-container
+  .package-inner-container
+  .package-type-wrap
+  .package-item
+  h3,
+.package-modal-container
+  .package-inner-container
+  .package-type-wrap
+  .package-item
+  p {
   text-align: center;
 }
 
@@ -631,20 +679,36 @@ p {
   .wedding-modal-container .wedding-gallery .gallery-item-wrap .img-container {
     width: 80%;
   }
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .img-container > div {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .img-container
+    > div {
     padding-top: 133.26%;
   }
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h2 {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .wedding-text-wrap
+    h2 {
     text-align: center;
     font-size: 25px;
     padding-bottom: 0px;
   }
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h3 {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .wedding-text-wrap
+    h3 {
     text-align: center;
     font-size: 18px;
     padding-bottom: 15px;
   }
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap p {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .wedding-text-wrap
+    p {
     text-align: center;
   }
   .package-modal-container {
@@ -654,7 +718,10 @@ p {
     flex-direction: column;
     justify-content: center;
   }
-  .package-modal-container .package-inner-container .package-type-wrap .package-item {
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item {
     min-height: 200px;
     width: 100%;
     min-width: 200px;
@@ -663,7 +730,11 @@ p {
     align-items: center;
     gap: 40px;
   }
-  .package-modal-container .package-inner-container .package-type-wrap .package-item .img-container {
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item
+    .img-container {
     width: 150px;
     border-radius: 100%;
     margin: 0 auto;
@@ -671,30 +742,66 @@ p {
     background-repeat: no-repeat;
     background-position: center;
   }
-  .package-modal-container .package-inner-container .package-type-wrap .package-item .img-container > div {
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item
+    .img-container
+    > div {
     padding-top: 100%;
   }
-  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap {
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item
+    .package-text-wrap {
     width: 100%;
   }
-  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap h3,
-  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap p {
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item
+    .package-text-wrap
+    h3,
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item
+    .package-text-wrap
+    p {
     text-align: left;
   }
-  .package-modal-container .package-inner-container .package-type-wrap .package-item .package-text-wrap h3 {
+  .package-modal-container
+    .package-inner-container
+    .package-type-wrap
+    .package-item
+    .package-text-wrap
+    h3 {
     padding-top: 0;
     padding-bottom: 10px;
     font-size: 20px;
   }
 }
 @media screen and (max-width: 500px) {
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h2 {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .wedding-text-wrap
+    h2 {
     text-align: left;
   }
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap h3 {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .wedding-text-wrap
+    h3 {
     text-align: left;
   }
-  .wedding-modal-container .wedding-gallery .gallery-item-wrap .wedding-text-wrap p {
+  .wedding-modal-container
+    .wedding-gallery
+    .gallery-item-wrap
+    .wedding-text-wrap
+    p {
     text-align: left;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
