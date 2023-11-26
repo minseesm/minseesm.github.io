@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirue baby</title>
+    <style>
+      :root {
+        --primary-color: #232323;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/2b1c6b1e57.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../assets/plugins/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <a href="../index.html#index" class="home-btn">HOME</a>
+    <header id="header" class="baby-header-container">
+      <div class="baby-header-wrap">
+        <h2 class="baby-header-title">Baby Gallery</h2>
+        <!-- <h4 class="baby-header-text">Nice Photo with Wonderful Day</h4> -->
+      </div>
+    </header>
+    <div class="baby-main-row">
+      <div class="img-container">
+        <img
+          id="first-img"
+          src="../assets/images/baby/18.jpg"
+          alt="baby_photo_1"
+        />
+      </div>
+      <div class="img-container">
+        <img
+          id="second-img"
+          src="../assets/images/baby/13.jpg"
+          alt="baby_photo_2"
+        />
+      </div>
+      <div class="img-container">
+        <img
+          id="third-img"
+          src="../assets/images/baby/17.jpg"
+          alt="baby_photo_3"
+        />
+      </div>
+    </div>
+    <div class="space-two-hundred"></div>
+    <div class="baby-photos-row">
+      <div class="img-container">
+        <img src="../assets/images/baby/4.jpg" alt="baby_photo_4" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/16.jpg" alt="baby_photo_8" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/12.jpg" alt="baby_photo_8" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/8.jpg" alt="baby_photo_16" />
+      </div>
+    </div>
+    <div class="baby-photos-row">
+      <div class="img-container">
+        <img src="../assets/images/baby/1.jpg" alt="baby_photo_5" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/9.jpg" alt="baby_photo_9" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/15.jpg" alt="baby_photo_13" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/7.jpg" alt="baby_photo_17" />
+      </div>
+    </div>
+    <div class="baby-photos-row">
+      <div class="img-container">
+        <img src="../assets/images/baby/6.jpg" alt="baby_photo_6" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/14.jpg" alt="baby_photo_10" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/10.jpg" alt="baby_photo_14" />
+      </div>
+      <div class="img-container">
+        <img src="../assets/images/baby/19.jpg" alt="baby_photo_18" />
+      </div>
+    </div>
+  </body>
+  <script>
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", (event) => {
+      if (window.scrollY > 804) {
+        header.style.position = "fixed";
+        header.style.bottom = "calc(100% - 100px)";
+      } else {
+        header.style.position = "absolute";
+        header.style.bottom = 0;
+      }
+    });
+  </script>
+  <script src="../assets/js/baby.js"></script>
+</html>

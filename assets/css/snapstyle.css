@@ -1,0 +1,19 @@
+.snap-header-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.snap-header-container .snap-header-wrap {
+  height: auto;
+}
+.snap-header-container .snap-header-wrap .snap-header-title {
+  color: #fff;
+  text-align: center;
+  height: auto;
+}
+.snap-header-container .snap-header-wrap .snap-header-text {
+  color: #fff;
+  text-align: center;
+  height: auto;
+}/*# sourceMappingURL=snapstyle.css.map */
