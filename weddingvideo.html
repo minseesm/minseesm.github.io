@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirue Snap</title>
+    <style>
+      :root {
+        --primary-color: #232323;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/2b1c6b1e57.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="./assets/css/videostyle.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugins/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header id="header" class="header-container">
+      <div class="header-wrap">
+        <h3>
+          <a href="./index.html">
+            <i class="fa-solid fa-house"></i>
+          </a>
+        </h3>
+        <h2 class="header-title">Wedding Gallery</h2>
+        <div class="menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="menu-bar">
+          <li class="menu-item">
+            <a href="./baby.html">Baby</a>
+          </li>
+          <li class="menu-item">
+            <a href="./maternity.html">Maternity</a>
+          </li>
+          <li class="menu-item">
+            <a href="./wedding.html">Wedding</a>
+          </li>
+          <li class="menu-item">
+            <a href="./engagement.html">Engagement</a>
+          </li>
+          <li class="menu-item">
+            <a href="./snap.html">Snap</a>
+          </li>
+          <li class="menu-item">
+            <div class="open-info">Contact</div>
+          </li>
+        </ul>
+      </div>
+      <div class="info-container">
+        <div class="info-close"></div>
+        <div class="info-card">
+          <div class="info-card-inner">
+            <div class="info-logo-container">
+              <img src="./assets/images/miruesnap_logo_w.png" />
+            </div>
+            <div class="info-description">
+              <div class="info-title">Contact</div>
+              <div class="info-text">
+                <a href="https://instagram.com/mirue_snap" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:mirue.snap@gmail.com">
+                  <i class="fa-regular fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="video-container">
+      <div class="monitor-container">
+        <video playsinline autoplay muted loop controls>
+          <source
+            src="./assets/images/WeddingVideo/Won&Rick_Shortver.mp4"
+            type="video/webm"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="insta-container">
+        <video playsinline autoplay muted loop controls>
+          <source
+            src="./assets/images/WeddingVideo/Won&Rick_Instaver.mp4"
+            type="video/webm"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <img src="./assets/images/instaframe.png" alt="instaframe" />
+      </div>
+    </div>
+  </body>
+
+  <script>
+    document.querySelector(".menu-btn").addEventListener("click", () => {
+      header.classList.toggle("menu-open");
+    });
+
+    document.querySelector(".open-info").addEventListener("click", () => {
+      header.classList.toggle("menu-open");
+      document.querySelector("body").classList.toggle("open-card");
+    });
+
+    document.querySelector(".info-close").addEventListener("click", () => {
+      document.querySelector("body").classList.toggle("open-card");
+    });
+  </script>
+</html>

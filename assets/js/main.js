@@ -45,6 +45,30 @@ document.querySelector(".main-btn").addEventListener("click", () => {
   goToIndex();
 });
 
+document.querySelector(".info-btn-container").addEventListener("click", () => {
+  document.querySelector("body").classList.add("open-card");
+  document.querySelector(".info-container").style.opacity = 1;
+});
+
+document
+  .querySelector(".info-btn-container")
+  .addEventListener("mouseout", () => {
+    if (!document.querySelector("body").classList.contains("open-card")) {
+      document.querySelector(".info-container").style.opacity = 0.6;
+    }
+  });
+
+document
+  .querySelector(".info-btn-container")
+  .addEventListener("mouseover", () => {
+    document.querySelector(".info-container").style.opacity = 1;
+  });
+
+document.querySelector(".info-close").addEventListener("click", () => {
+  document.querySelector("body").classList.remove("open-card");
+  document.querySelector(".info-container").style.opacity = 0.6;
+});
+
 document.querySelector(".main-btn-wrap").addEventListener("mouseover", () => {
   document.querySelector(".main-lens-img").style.opacity = 1;
 });

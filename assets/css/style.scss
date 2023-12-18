@@ -10,6 +10,10 @@
   src: url("../fonts/Bebas_Neue/BebasNeue-Regular.ttf"); /*URL to font*/
 }
 
+@font-face {
+  font-family: DS-digital; /*a name to be used later*/
+  src: url("../fonts/DS-digital/DS-DIGI.TTF"); /*URL to font*/
+}
 *,
 body {
   padding: 0;
@@ -111,16 +115,21 @@ h5 {
 
   .main-lens-img {
     position: absolute;
-    top: 10px;
-    left: 15px;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: 0.5s ease-in-out all;
-    background-image: url("../images/lens-490806_1280.jpg");
-    background-size: cover;
+    background-image: url("../images/miruesnap_logo_b.png");
+    background-size: 450px;
     background-position: center;
+    background-repeat: no-repeat;
     filter: brightness(0.1);
+  }
+
+  @media screen and (max-width: 1000px) {
+    .main-lens-img {
+      opacity: 1;
+    }
   }
 
   .main-btn-wrap {
@@ -134,10 +143,12 @@ h5 {
 
     .main-btn {
       color: inherit;
+      font-family: "DS-digital" !important;
       font-size: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
   }
 
@@ -151,6 +162,7 @@ h5 {
   height: 100%;
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   .link {
     opacity: 0;
@@ -239,6 +251,437 @@ h5 {
   .link-container:hover {
     filter: brightness(0.6);
   }
+
+  .info-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 100%;
+    transition: 0.3s ease-in-out all;
+    opacity: 0.6;
+
+    .info-btn-container {
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      padding: 15px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out all;
+
+      span > i {
+        font-size: 25px;
+      }
+
+      .info-up {
+        display: inline;
+      }
+    }
+
+    .info-card {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: "DS-digital";
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 0 20px 50px;
+      width: 50%;
+      min-width: 500px;
+      height: 500px;
+      transition: 0.5s ease-in-out all;
+
+      .info-card-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+          width: 50%;
+          height: auto;
+        }
+
+        .info-logo-container > img {
+          max-width: 100%;
+        }
+
+        .info-description {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding-right: 20px;
+          flex-direction: column;
+          height: 100%;
+
+          .info-title {
+            text-align: right;
+            font-size: 30px;
+            height: auto;
+          }
+
+          .info-text {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            font-size: 26px;
+            padding-top: 15px;
+            height: auto;
+          }
+          a {
+            display: block;
+            text-decoration: none;
+            color: inherit !important;
+            transition: 0.2s ease-in-out all;
+            height: auto;
+            width: fit-content;
+          }
+          .info-text > a > i {
+            font-size: 25px;
+            transition: 0.2s ease-in-out all;
+            height: auto;
+            width: fit-content;
+          }
+
+          .info-text > a :hover {
+            font-size: 30px;
+            color: #f8b996;
+            height: auto;
+            width: fit-content;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .link-container {
+    flex-direction: column;
+    justify-content: center;
+
+    .link {
+      width: 100%;
+      height: 18%;
+      > a {
+        margin-bottom: 0 !important;
+        background-image: none !important;
+        background-color: transparent;
+      }
+      > h2 {
+        opacity: 1 !important;
+        top: 50% !important;
+      }
+    }
+
+    .link:hover {
+      width: 100%;
+
+      .link-title {
+        a {
+          display: block;
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
+
+.open-card {
+  .info-container {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 100%;
+    opacity: 1;
+
+    .info-close {
+      background-color: #000;
+      opacity: 0.6;
+    }
+
+    .info-card {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+
+      .info-btn-container {
+        display: none;
+      }
+    }
+  }
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  padding: 0 15px;
+  background-color: #333;
+
+  .header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+
+    > h3 {
+      width: fit-content;
+      a {
+        width: fit-content;
+        i {
+          font-size: 20px;
+          transition: 0.2s ease-in-out all;
+        }
+      }
+
+      a:hover i {
+        color: #fff;
+      }
+    }
+
+    .header-title {
+      color: #fff;
+      text-align: center;
+      height: auto;
+    }
+
+    .header-text {
+      color: #fff;
+      text-align: center;
+      height: auto;
+    }
+
+    .menu-btn {
+      width: fit-content;
+      cursor: pointer;
+
+      i {
+        font-size: 25px;
+        transition: 0.2s ease-in-out all;
+      }
+    }
+
+    .menu-btn:hover i {
+      color: #fff;
+    }
+
+    .menu-bar {
+      width: 0;
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      height: auto;
+      background-color: #333;
+      list-style: none;
+      opacity: 0;
+      z-index: 0;
+      overflow: hidden;
+      transition: 0.3s ease-in-out all;
+
+      .menu-item {
+        height: auto;
+
+        a,
+        div {
+          font-size: 25px;
+          color: #fff !important;
+          text-align: center;
+          transition: 0.2s ease-in-out all;
+        }
+
+        a:hover {
+          color: #6f6f6f !important;
+        }
+      }
+    }
+  }
+}
+
+.menu-open {
+  .menu-bar {
+    opacity: 1 !important;
+    width: 200px !important;
+    position: absolute !important;
+    bottom: 100%;
+    right: 0 !important;
+    padding: 10px !important;
+    z-index: 99 !important;
+    height: auto !important;
+    background-color: #333 !important;
+    list-style: none !important;
+
+    .menu-item {
+      height: auto;
+
+      a,
+      div {
+        cursor: pointer;
+        font-size: 25px;
+        width: 100%;
+        color: #fff !important;
+        text-align: center;
+        transition: 0.2s ease-in-out all;
+      }
+
+      a:hover {
+        color: #6f6f6f !important;
+      }
+      div:hover {
+        color: #6f6f6f !important;
+      }
+    }
+  }
+}
+
+.snap-main-row {
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+
+  .img-container {
+    width: 33.3333%;
+    padding-top: 32.159%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.wedding-row-main {
+  width: 100%;
+  display: flex;
+  height: calc(100% - 100px);
+
+  .img-container {
+    width: 100%;
+    padding-top: 32.159%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.baby-main-row {
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+
+  .img-container {
+    width: 33.3333%;
+    padding-top: 500px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.maternity-main-row {
+  width: 100%;
+  display: flex;
+  height: calc(100% - 100px);
+
+  .img-container {
+    width: 33.3333%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.engagement-main-row {
+  width: 100%;
+  display: flex;
+  height: calc(100% - 100px);
+
+  .img-container {
+    width: 33.3333%;
+    padding-top: 32.159%;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.space-two-hundred {
+  height: 100px;
+  width: 100%;
+}
+
+.photos-row {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  transition: 0.2 ease-in-out all;
+
+  .img-container {
+    width: 25%;
+    height: auto;
+    padding-top: 33.333%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .img-container {
+      width: 50%;
+      padding-top: 66.66%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .img-container {
+      width: 100%;
+      padding-top: 123%;
+    }
+  }
+}
+
+.photos-row-three {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  transition: 0.2 ease-in-out all;
+
+  .img-container {
+    width: 33.3333%;
+    height: auto;
+    padding-top: 40%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (max-width: 700px) {
+    .img-container {
+      width: 100%;
+      padding-top: 123%;
+    }
+  }
+}
+
+.photo-full-row {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+
+  .img-container {
+    width: 100%;
+    padding-top: 66.666%;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .wedding-container {
@@ -301,314 +744,189 @@ h5 {
   }
 }
 
-.snap-header-container {
-  position: absolute;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100hv;
 
-.snap-main-row {
-  width: 100%;
-  height: calc(100% - 100px);
-  display: flex;
-
-  .img-container {
-    width: 33.3333%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.space-two-hundred {
-  height: 100px;
-  width: 100%;
-}
-
-.snap-photos-row {
-  width: 100%;
-  height: 60%;
-  display: flex;
-  overflow: hidden;
-
-  .img-container {
-    width: 25%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.snap-photo-full-row {
-  width: 100%;
-  height: 80%;
-
-  .img-container {
-    width: 100%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.baby-header-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-
-  .baby-header-wrap {
-    height: auto;
-
-    .baby-header-title {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-
-    .baby-header-text {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-  }
-}
-
-.baby-main-row {
-  width: 100%;
-  height: calc(100% - 100px);
-  display: flex;
-
-  .img-container {
-    width: 33.3333%;
-    padding-top: 500px;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.baby-photos-row {
-  width: 100%;
-  max-height: 60%;
-  height: auto;
-  display: flex;
-  overflow: hidden;
-
-  .img-container {
-    width: 25%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.maternity {
-  width: 100%;
-  height: 80%;
-
-  .img-container {
-    width: 100%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.maternity-header-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-
-  .maternity-header-wrap {
-    height: auto;
-
-    .maternity-header-title {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-
-    .maternity-header-text {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-  }
-}
-
-.maternity-main-row {
-  width: 100%;
-  display: flex;
-  height: calc(100% - 100px);
-
-  .img-container {
-    width: 33.3333%;
+  .info-container {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    transition: 0.3s ease-in-out all;
+    opacity: 1;
+    height: 100vh;
+
+    .info-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "DS-digital";
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 0 20px 50px;
+      width: 50%;
+      min-width: 500px;
+      height: 500px;
+      transition: 0.5s ease-in-out all;
+
+      .info-card-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+          width: 50%;
+          height: auto;
+        }
+
+        .info-logo-container > img {
+          max-width: 100%;
+        }
+
+        .info-description {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding-right: 20px;
+          flex-direction: column;
+          height: 100%;
+
+          .info-title {
+            text-align: right;
+            font-size: 30px;
+            height: auto;
+          }
+
+          .info-text {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
+            font-size: 26px;
+            padding-top: 15px;
+            height: auto;
+          }
+          a {
+            display: block;
+            text-decoration: none;
+            color: inherit !important;
+            transition: 0.2s ease-in-out all;
+            height: auto;
+            width: fit-content;
+          }
+          .info-text > a > i {
+            font-size: 25px;
+            transition: 0.2s ease-in-out all;
+            height: auto;
+            width: fit-content;
+          }
+
+          .info-text > a :hover {
+            font-size: 30px;
+            color: #f8b996;
+            height: auto;
+            width: fit-content;
+          }
+        }
+      }
+    }
   }
 }
 
-.maternity-photos-row {
-  width: 100%;
-  max-height: 60%;
-  height: auto;
-  display: flex;
-  overflow: hidden;
+.open-card {
+  .overlay {
+    z-index: 99999999;
+    .info-container {
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
 
-  .img-container {
-    width: 25%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
+      .info-close {
+        background-color: #000;
+        opacity: 0.6;
+      }
+
+      .info-card {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 20px;
+
+        .info-btn-container {
+          display: none;
+        }
+      }
+    }
   }
 }
 
-.engagement-photo-full-row {
-  width: 100%;
-  height: 80%;
+@media screen and (max-width: 1000px) {
+  .wedding-container {
+    flex-direction: column;
+    justify-content: center;
 
-  .img-container {
+    .wedding-links-wrap {
+      width: 100%;
+      height: 50%;
+
+      h2 a {
+        font-size: 25px;
+      }
+
+      .wedding-video-link {
+        height: auto;
+        position: inherit;
+      }
+    }
+
+    .wedding-links-wrap:hover {
+      width: 95%;
+
+      h2 {
+        a {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .wedding-video-wrap {
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #third-img {
+    display: none;
+  }
+
+  #first-img,
+  #second-img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #second-img {
+    display: none;
+  }
+
+  #first-img {
     width: 100%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.engagement-header-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-
-  .engagement-header-wrap {
-    height: auto;
-
-    .engagement-header-title {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-
-    .engagement-header-text {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-  }
-}
-
-.engagement-main-row {
-  width: 100%;
-  display: flex;
-  height: calc(100% - 100px);
-
-  .img-container {
-    width: 33.3333%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.engagement-photos-row {
-  width: 100%;
-  max-height: 60%;
-  height: auto;
-  display: flex;
-  overflow: hidden;
-
-  .img-container {
-    width: 25%;
-    height: 100%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.wedding-header-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  background-color: #333;
-
-  .wedding-header-wrap {
-    height: auto;
-
-    .wedding-header-title {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-
-    .wedding-header-text {
-      color: #fff;
-      text-align: center;
-      height: auto;
-    }
-  }
-}
-
-.wedding-row-main {
-  width: 100%;
-  display: flex;
-  height: calc(100% - 100px);
-
-  .img-container {
-    width: 100%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.wedding-row {
-  width: 100%;
-  display: flex;
-  height: 80%;
-
-  .img-container {
-    width: 100%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.wedding-main-row {
-  width: 100%;
-  display: flex;
-  height: 80%;
-
-  .img-container {
-    width: 33.3333%;
-    padding-top: 32.159%;
-    background-size: cover;
-    background-position: center;
   }
 }

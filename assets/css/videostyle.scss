@@ -30,6 +30,20 @@ a {
   display: inline-block;
   color: inherit;
   text-transform: none;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
 }
 
 img {
@@ -42,44 +56,139 @@ body {
   transition: 0.3s ease-in-out all;
 }
 
-.intro {
-  position: absolute;
+.header-container {
   width: 100%;
-  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100px;
+  top: 0;
+  left: 0;
+  padding: 0 15px;
+  background-color: #333;
+  z-index: 99;
 
-  h2 {
-    color: #fff;
-    font-size: 45px;
+  .header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+
+    > h3 {
+      width: fit-content;
+      a {
+        width: fit-content;
+        i {
+          font-size: 20px;
+          transition: 0.2s ease-in-out all;
+        }
+      }
+
+      a:hover i {
+        color: #fff;
+      }
+    }
+
+    .header-title {
+      color: #fff;
+      text-align: center;
+      height: auto;
+    }
+
+    .header-text {
+      color: #fff;
+      text-align: center;
+      height: auto;
+    }
+
+    .menu-btn {
+      width: fit-content;
+      cursor: pointer;
+
+      i {
+        font-size: 25px;
+        transition: 0.2s ease-in-out all;
+      }
+    }
+
+    .menu-btn:hover i {
+      color: #fff;
+    }
+
+    .menu-bar {
+      width: 0;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      height: auto;
+      background-color: #333;
+      list-style: none;
+      opacity: 0;
+      z-index: 9999;
+      overflow: hidden;
+      transition: 0.3s ease-in-out all;
+
+      .menu-item {
+        height: auto;
+
+        a {
+          font-size: 25px;
+          color: #fff !important;
+          text-align: center;
+          transition: 0.2s ease-in-out all;
+        }
+
+        a:hover {
+          color: #6f6f6f !important;
+        }
+      }
+    }
   }
 }
 
-.home-btn {
-  display: block;
-  position: absolute;
-  z-index: 10;
-  top: 20px;
-  left: 20px;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out all;
-  width: auto;
-  height: auto;
-  text-transform: none;
-  text-decoration: none;
-}
+.menu-open {
+  .menu-bar {
+    opacity: 1 !important;
+    width: 200px !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    padding: 10px !important;
+    z-index: 99 !important;
+    height: auto !important;
+    background-color: #333 !important;
+    list-style: none !important;
 
-.home-btn:hover {
-  color: #6f6f6f;
+    .menu-item {
+      height: auto;
+
+      a,
+      div {
+        cursor: pointer;
+        font-size: 25px;
+        width: 100%;
+        color: #fff !important;
+        text-align: center;
+        transition: 0.2s ease-in-out all;
+      }
+
+      a:hover {
+        color: #6f6f6f !important;
+      }
+
+      div:hover {
+        color: #6f6f6f !important;
+      }
+    }
+  }
 }
 
 .video-container {
   display: flex;
   position: inherit;
   align-items: center;
+  margin-top: 100px;
   width: 100%;
   height: 100%;
 
@@ -102,6 +211,151 @@ body {
       transform: translate(-50%, -50%);
       max-width: 100%;
       height: auto;
+    }
+  }
+}
+
+.info-container {
+  position: absolute;
+  top: 0;
+  left: 105%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 100%;
+  transition: 0.3s ease-in-out all;
+  opacity: 1;
+  height: 100vh;
+
+  .info-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "DS-digital";
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 20px 50px;
+    width: 50%;
+    min-width: 500px;
+    height: 500px;
+    transition: 0.5s ease-in-out all;
+
+    .info-card-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        width: 50%;
+        height: auto;
+      }
+
+      .info-logo-container > img {
+        max-width: 100%;
+      }
+
+      .info-description {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-right: 20px;
+        flex-direction: column;
+        height: 100%;
+
+        .info-title {
+          text-align: right;
+          font-size: 30px;
+          height: auto;
+        }
+
+        .info-text {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 20px;
+          font-size: 26px;
+          padding-top: 15px;
+          height: auto;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          color: inherit !important;
+          transition: 0.2s ease-in-out all;
+          height: auto;
+          width: fit-content;
+        }
+        .info-text > a > i {
+          font-size: 25px;
+          transition: 0.2s ease-in-out all;
+          height: auto;
+          width: fit-content;
+        }
+
+        .info-text > a :hover {
+          font-size: 30px;
+          color: #f8b996;
+          height: auto;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}
+
+.open-card {
+  .info-container {
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+
+    .info-close {
+      background-color: #000;
+      opacity: 0.6;
+    }
+
+    .info-card {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+
+      .info-btn-container {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .video-container {
+    flex-direction: column;
+    height: auto;
+
+    .monitor-container {
+      width: 100%;
+      height: auto;
+    }
+
+    .insta-container {
+      width: 100%;
+      height: auto;
+
+      video {
+        top: 20px;
+      }
+      img {
+        top: 0;
+        transform: translate(-50%, 0);
+      }
     }
   }
 }
