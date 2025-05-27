@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flip Cards - One by One</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f0f2f5;
+    }
+    .card {
+      background-color: transparent;
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
+      perspective: 1000px;
+      margin: 0 auto 20px auto;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .card-front {
+      background-color: #ffffff;
+      color: #333;
+      font-size: 30px;
+    }
+    .card-back {
+      background-color: #007bff;
+      color: white;
+      transform: rotateY(180deg);
+      font-size: 23px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 16px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="flipCard">
+  <div class="card-inner" id="cardInner">
+    <div class="card-front" id="cardFront">Loading...</div>
+    <div class="card-back" id="cardBack">Loading...</div>
+  </div>
+</div>
+
+<div class="buttons">
+  <button onclick="prevCard()">Previous</button>
+  <button onclick="flipCard()">Flip</button>
+  <button onclick="nextCard()">Next</button>
+</div>
+
+<script>
+const cards = [
+  { front: 'sincere', back: '정직한' },
+  { front: 'region', back: '지역' },
+  { front: 'propose', back: '제안하다' },
+  { front: 'administer', back: '관리하다' },
+  { front: 'annum', back: '연도' },
+  { front: 'determine', back: '결정하다' },
+  { front: 'radiograph', back: '엑스레이' },
+  { front: 'comprehend', back: '이해하다' },
+  { front: 'rely on', back: '신뢰' },
+  { front: 'retain', back: '유지하다' },
+  { front: 'acquire', back: '배우다' },
+  { front: 'development', back: '성장' },
+  { front: 'endeavor', back: '노력' },
+  { front: 'observe', back: '알아차리다' },
+  { front: 'inquiry', back: '질문' },
+  { front: 'strategize', back: '계획하다' },
+  { front: 'significance', back: '가치' },
+  { front: 'concentrate', back: '집중하다' },
+  { front: 'distribute', back: '공유하다' },
+  { front: 'esteem', back: '존경' },
+  { front: 'capability', back: '능력' },
+  { front: 'concept', back: '아이디어' },
+  { front: 'enroll', back: '가입하다' },
+  { front: 'advantage', back: '이익' },
+  { front: 'operate', back: '일하다' },
+  { front: 'contrast', back: '비교하다' },
+  { front: 'propose', back: '제안하다' },
+  { front: 'restrict', back: '한계' },
+  { front: 'crew', back: '팀' },
+  { front: 'propose', back: '제안하다' },
+  { front: 'summon', back: '초대하다' },
+  { front: 'determine', back: '결정하다' },
+  { front: 'requirement', back: '요구하다' },
+  { front: 'initiate', back: '열다' },
+  { front: 'administer', back: '관리하다' },
+  { front: 'esteem', back: '존경' },
+  { front: 'significance', back: '가치' },
+  { front: 'operate', back: '일하다' },
+  { front: 'administer', back: '관리하다' },
+  { front: 'safeguard', back: '보호하다' },
+  { front: 'capability', back: '능력' },
+  { front: 'significance', back: '가치' },
+  { front: 'sincere', back: '정직한' },
+  { front: 'observe', back: '알아차리다' },
+  { front: 'safeguard', back: '보호하다' },
+  { front: 'comprehend', back: '이해하다' },
+  { front: 'contrast', back: '비교하다' },
+  { front: 'vitality', back: '에너지' },
+  { front: 'administer', back: '관리하다' },
+  { front: 'strategize', back: '계획하다' },
+
+];
+
+let currentIndex = 0;
+let isFlipped = false;
+
+function updateCard() {
+  document.getElementById('cardFront').textContent = cards[currentIndex].front;
+  document.getElementById('cardBack').textContent = cards[currentIndex].back;
+  document.getElementById('flipCard').classList.remove('flipped');
+  isFlipped = false;
+}
+
+function flipCard() {
+  const card = document.getElementById('flipCard');
+  card.classList.toggle('flipped');
+  isFlipped = !isFlipped;
+}
+
+function prevCard() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCard();
+  }
+}
+
+function nextCard() {
+  if (currentIndex < cards.length - 1) {
+    currentIndex++;
+    updateCard();
+  }
+}
+
+updateCard();
+</script>
+
+</body>
+</html>
