@@ -1,0 +1,716 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* --- 스크롤 스냅 적용 --- */
+html {
+    /* y축(세로) 방향으로 스크롤 스냅을 적용합니다. */
+    /* 'mandatory'는 스크롤이 멈출 때 무조건 스냅 지점에 멈추도록 합니다. */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* 부드러운 스크롤 효과 유지 */
+    background-color: #000;
+}
+
+:root {
+    --primary-color: #8d8b8b;
+    --text-color: #333;
+    --background-color: #fff;
+    --section-bg-color: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #eaeaea;
+    color: var(--text-color);
+}
+
+.wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--background-color);
+}
+
+.section {
+    padding: 100px 25px;
+    text-align: center;
+    /* 스냅 */
+    scroll-snap-align: start;
+}
+
+.section:nth-child(even) {
+    background-color: var(--section-bg-color);
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Header */
+.header {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    /* 스냅 */
+    scroll-snap-align: start;
+}
+.header .main-visual {
+    position: relative;
+    width: 100%;
+}
+.header img {
+    width: 100%;
+    display: block;
+}
+.header .main-title {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.header .main-title h1 {
+    margin: 5px 0;
+    font-size: 2.5em;
+    font-weight: 400;
+}
+.header .main-title p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Intro */
+.section.intro {
+    height: 100dvh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 0 25px;
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)
+        ),
+        url("image/header-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.section.intro::after,
+.section.intro::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+
+.section.intro::after {
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0.1)
+    );
+}
+.section.intro::before {
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 1)
+    );
+}
+
+.intro-text {
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+.parents-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    width: 100%;
+}
+.parents-info .parent-name {
+    font-size: 0.9em;
+    color: #666;
+    margin-left: 10px;
+}
+
+/* Contact */
+
+.contact-account-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: 100dvh;
+    height: auto;
+    align-items: center;
+}
+
+.contact-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 45px;
+}
+
+.contact-person p {
+    margin-bottom: 10px;
+}
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color: #333;
+    margin: 0 5px;
+    font-size: 0.9em;
+}
+.btn .fas {
+    margin-right: 5px;
+}
+
+/* Account */
+.section.account {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    scroll-snap-align: end;
+}
+
+/* Gallery */
+.section.gallery {
+    padding: 50px 25px;
+}
+
+.gallery-container {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+    /* height 속성을 제거하고, 높이 변경 애니메이션을 위해 transition 추가 */
+    transition: height 0.4s ease-in-out;
+}
+
+.gallery-track {
+    display: flex;
+}
+
+.gallery-track.grabbing {
+    cursor: grabbing;
+}
+
+.gallery-track img {
+    width: 100%;
+    /* height를 auto로 설정하여 이미지의 원본 비율을 유지 */
+    height: auto;
+    flex-shrink: 0;
+    pointer-events: none;
+    object-fit: cover;
+}
+.gallery-nav {
+    margin-top: 15px;
+}
+.gallery-nav button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+/* Location */
+#map {
+    margin: 0 auto 15px auto;
+    border: 1px solid #eee;
+}
+.address {
+    margin-bottom: 20px;
+}
+.map-actions .btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+/* Guestbook */
+#guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+#guestbook-form input,
+#guestbook-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#guestbook-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.btn-submit {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+#guestbook-entries .entry {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 5px;
+}
+#guestbook-entries .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+#guestbook-entries .entry-name {
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #999;
+    background-color: #f1f1f1;
+}
+/* Gallery 섹션에 아래 스타일 추가 또는 수정 */
+
+.gallery-container {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab; /* 드래그가 가능함을 나타내는 커서 */
+    user-select: none; /* 드래그 중 텍스트나 이미지가 선택되는 것을 방지 */
+}
+
+.gallery-track {
+    display: flex;
+    /* transition 속성은 snapping 애니메이션을 위해 JavaScript에서 제어 */
+}
+
+.gallery-track.grabbing {
+    cursor: grabbing; /* 드래그하는 동안의 커서 모양 */
+}
+
+.gallery-track img {
+    width: 100%;
+    flex-shrink: 0;
+    pointer-events: none; /* 이미지 자체에 이벤트가 걸려 드래그가 방해되는 것을 방지 */
+}
+
+/* 기존 .gallery-nav 스타일은 그대로 유지 */
+.gallery-nav {
+    margin-top: 15px;
+}
+.gallery-nav button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin: 0 10px;
+}
+/* Location Details & Tabs (새로 추가) */
+.location-details {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+ul.tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    border-bottom: 2px solid #ddd;
+}
+
+li.tab-link {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: #888;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px; /* 아래 테두리와 겹치게 */
+    transition: all 0.3s ease;
+}
+
+li.tab-link.active {
+    color: var(--primary-color); /* style.css 상단에 정의된 색상 변수 */
+    font-weight: 500;
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none; /* 기본적으로 모든 탭 컨텐츠는 숨김 */
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block; /* 활성화된 탭 컨텐츠만 보임 */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+p.tab-address {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.nav-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* 아이콘 사이 간격 */
+}
+
+.nav-icons a {
+    display: inline-block;
+}
+
+.nav-icons img {
+    width: 48px; /* 아이콘 크기 */
+    height: 48px;
+    border-radius: 50%; /* 동그란 아이콘 모양 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.nav-icons img:hover {
+    transform: scale(1.1); /* 마우스 올렸을 때 약간 커지는 효과 */
+}
+
+/* style.css 파일 맨 아래에 추가 */
+
+/* --- 방문록(Guestbook) 섹션 --- */
+.guestbook {
+    background-color: #fdfaf6;
+    padding: 50px 20px;
+}
+
+#guestbook-form {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#guestbook-form input,
+#guestbook-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0d9d1;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#guestbook-form input::placeholder,
+#guestbook-form textarea::placeholder {
+    color: #a9a9a9;
+}
+
+#guestbook-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#guestbook-form .btn-submit {
+    padding: 12px;
+    border: none;
+    background-color: #8d7b68; /* 메인 테마 색상과 유사하게 */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#guestbook-form .btn-submit:hover {
+    background-color: #6d6356;
+}
+
+#guestbook-entries {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.entry {
+    background: #fff;
+    border: 1px solid #f0e9e1;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+}
+
+.entry-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #6d6356;
+}
+
+.entry-date {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.entry-message {
+    line-height: 1.6;
+    color: #333;
+}
+
+.no-entries {
+    text-align: center;
+    color: #888;
+    padding: 40px 0;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.btn-delete:hover {
+    color: #ff4d4d;
+}
+
+.location-section {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+.location-section h2 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 40px;
+    position: relative;
+}
+.location-section h2::before {
+    content: "✻";
+    display: block;
+    color: #c0a080;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+.location-section .address {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+.location-section h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #5a5a5a;
+    margin-top: 30px; /* 탭과의 간격 조정 */
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+.location-section ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.location-section li {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+}
+.location-section li strong {
+    color: #333;
+}
+.location-section li small {
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* --- 탭 스타일 시작 --- */
+.tab-nav {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* 모서리를 둥글게 하기 위해 */
+}
+.tab-button {
+    flex: 1; /* 탭 버튼이 공간을 균등하게 차지 */
+    padding: 15px 10px;
+    border: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1em;
+    color: #888;
+    transition: background-color 0.3s, color 0.3s;
+}
+.tab-button:first-child {
+    border-right: 1px solid #e0e0e0;
+}
+.tab-button.active {
+    background-color: #c0a080;
+    color: white;
+    font-weight: 500;
+}
+.tab-content {
+    display: none; /* 기본적으로 모든 탭 내용은 숨김 */
+    padding-top: 10px;
+}
+.tab-content.active {
+    display: block; /* 활성화된 탭 내용만 보여줌 */
+}
+/* --- 탭 스타일 끝 --- */
+.toast-popup {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+.toast-popup.show {
+    opacity: 1;
+    bottom: 50px;
+}
+
+.account-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* 신랑/신부 측 사이 여백 */
+    margin-top: 30px;
+}
+
+.account-info {
+    flex: 1; /* 공간을 균등하게 차지 */
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.account-info h3 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between; /* 이름과 버튼을 양쪽 끝으로 */
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.copy-button {
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    color: #555;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.85em;
+    transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+    background-color: #e9e9e9;
+}
+
+@media screen and (max-width: 500px) {
+    .account-container {
+        flex-direction: column;
+    }
+
+    .contact-person {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
+}

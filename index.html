@@ -1,179 +1,384 @@
+<!doctype html>
+<html lang="ko">
 
-<!DOCTYPE html>
-<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Flip Cards - One by One</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      background-color: #f0f2f5;
-    }
-    .card {
-      background-color: transparent;
-      width: 100%;
-      max-width: 500px;
-      height: 500px;
-      perspective: 1000px;
-      margin: 0 auto 20px auto;
-    }
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-    .card.flipped .card-inner {
-      transform: rotateY(180deg);
-    }
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      backface-visibility: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .card-front {
-      background-color: #ffffff;
-      color: #333;
-      font-size: 30px;
-    }
-    .card-back {
-      background-color: #007bff;
-      color: white;
-      transform: rotateY(180deg);
-      font-size: 23px;
-    }
-    .buttons {
-      margin-top: 20px;
-    }
-    button {
-      padding: 10px 16px;
-      margin: 0 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>양성희 ♥ 김예지 결혼합니다</title>
+
+  <!-- Font Awesome -->
+  <script src="assets/font-awesome/font-awesome.js" defer></script>
+
+  <!-- AOS (스크롤 인식하여 애니메이션으로 등장)-->
+  <link href="assets/aos/aos.css" rel="stylesheet" />
+  <script src="assets/aos/aos.js"></script>
+
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=1mzz80ncfb"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="main-visual">
+        <img src="image/main.png" />
+      </div>
+    </header>
 
-<div class="card" id="flipCard">
-  <div class="card-inner" id="cardInner">
-    <div class="card-front" id="cardFront">Loading...</div>
-    <div class="card-back" id="cardBack">Loading...</div>
+    <section class="section intro">
+
+      <h2 class="section-title" data-aos="fade-down">초대합니다</h2>
+      <p data-aos="fade-up" class="intro-text">
+        겨울을 지나 봄이 오듯 <br />
+        익숙한 듯 새로운 삶을 살아가려 합니다.<br />
+        서로 다른 두 사람이 남은 삶을 함께하며,<br />
+        심해 같은 슬픔과 우주 같은 기쁨을 나누고<br />
+        비로소 아름다운 꽃을 피워내고자 합니다.<br />
+        저희의 햇살이 되어주시고, 봄비가 되어주세요.<br />
+      </p>
+      <div class="parents-info">
+        <div class="groom-parents" data-aos="fade-up">
+          <p>
+            <span>신랑 양성희</span>
+            <br /><span class="parent-name"> 故양철진・서정자의 차남</span>
+          </p>
+        </div>
+        <div class="bride-parents" data-aos="fade-up">
+          <p>
+            <span>신부 김예지</span>
+            <br /><span class="parent-name"> 故김종식・채동순의 차녀</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section contact">
+      <h2 class="section-title" data-aos="fade-down">연락처</h2>
+      <div class="contact-buttons">
+        <div class="contact-person" data-aos="fade-left">
+          <p>신랑에게 연락하기</p>
+          <a href="tel:010-2825-0309" class="btn"><i class="fas fa-phone"></i> 전화</a>
+          <a href="sms:010-2825-0309" class="btn"><i class="fas fa-comment-sms"></i> 문자</a>
+        </div>
+        <div class="contact-person" data-aos="fade-right">
+          <p>신부에게 연락하기</p>
+          <a href="tel:010-4894-4936" class="btn"><i class="fas fa-phone"></i> 전화</a>
+          <a href="sms:010-4894-4936" class="btn"><i class="fas fa-comment-sms"></i> 문자</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section account">
+      <h2 class="section-title" data-aos="fade-down">마음 전하실 곳</h2>
+      <div class="account-container">
+        <div class="account-info" data-aos="fade-left">
+          <h3>신랑 측</h3>
+          <div class="account-item">
+            <span><strong>신랑 양성희</strong></span>
+            <button class="copy-button" data-account="423702-01-374640 (국민은행)">
+              계좌번호 복사
+            </button>
+          </div>
+          <div class="account-item">
+            <span><strong>어머니 OOO</strong></span>
+            <button class="copy-button" data-account="111-222-333444 (은행이름)">
+              계좌번호 복사
+            </button>
+          </div>
+        </div>
+
+        <div class="account-info" data-aos="fade-right">
+          <h3>신부 측</h3>
+          <div class="account-item">
+            <span><strong>신부 OOO</strong></span>
+            <button class="copy-button" data-account="555-666-777888 (은행이름)">
+              계좌번호 복사
+            </button>
+          </div>
+          <div class="account-item">
+            <span><strong>어머니 OOO</strong></span>
+            <button class="copy-button" data-account="999-888-777666 (은행이름)">
+              계좌번호 복사
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery">
+      <h2 class="section-title" data-aos="fade-down">우리의 순간</h2>
+      <div class="gallery-container" data-aos="fade-up">
+        <div class="gallery-track">
+          <img src="image/sub_1.jpg" alt="Gallery Image 1" />
+          <img src="image/sub_2.jpg" alt="Gallery Image 2" />
+          <img src="image/sub_3.jpg" alt="Gallery Image 3" />
+          <img src="image/sub_4.jpg" alt="Gallery Image 4" />
+          <img src="image/sub_5.jpg" alt="Gallery Image 5" />
+          <img src="image/sub_6.jpg" alt="Gallery Image 6" />
+          <img src="image/sub_7.jpg" alt="Gallery Image 7" />
+          <img src="image/sub_8.jpg" alt="Gallery Image 8" />
+          <img src="image/sub_9.jpg" alt="Gallery Image 9" />
+          <img src="image/sub_10.jpg" alt="Gallery Image 10" />
+          <img src="image/sub_11.jpg" alt="Gallery Image 11" />
+          <img src="image/sub_12.jpg" alt="Gallery Image 12" />
+          <img src="image/sub_13.jpg" alt="Gallery Image 13" />
+          <img src="image/sub_14.jpg" alt="Gallery Image 14" />
+          <img src="image/sub_15.jpg" alt="Gallery Image 15" />
+        </div>
+      </div>
+      <div class="gallery-nav">
+        <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+    <section class="section">
+
+      <div class="location-section">
+        <h2 class="section-title" data-aos="fade-down">오시는 길</h2>
+
+        <p class="address" data-aos="fade-up">
+          <strong>테라리움서울</strong><br />
+          서울특별시 노원구 노원로 247 서울온천 7~8층
+        </p>
+        <div class="tab-nav" data-aos="fade-up">
+          <button class="tab-button active">오시는 길</button>
+        </div>
+
+        <div id="map" data-aos="fade-up"></div>
+
+        <h3 data-aos="fade-up">지하철 이용 시</h3>
+        <ul data-aos="fade-up">
+          <li><strong>7호선 하계역 2번 출구</strong> 이용</li>
+          <li>
+            - <strong>셔틀버스:</strong> 150m 앞 '무궁화 약국' 앞에서 수시 운행
+          </li>
+          <li>
+            - <strong>도보:</strong> 노원소방서, 대진고 방면 300m (약 10분 소요)
+          </li>
+        </ul>
+
+        <h3 data-aos="fade-up">버스 이용 시</h3>
+        <ul data-aos="fade-up">
+          <li><strong>'서울온천 / 하계1동주민센터'</strong> 정류장 하차</li>
+          <li>- <strong>간선:</strong> 100</li>
+          <li>- <strong>지선:</strong> 1132, 1141, 1221, 1224</li>
+        </ul>
+
+        <h3 data-aos="fade-up">주차 안내</h3>
+        <ul data-aos="fade-up">
+          <li><strong>무료 주차:</strong> 2시간</li>
+          <li>테라리움서울 1층 정문에서 주차 안내를 받으실 수 있습니다.</li>
+        </ul>
+
+        <p class="parking-notice" style="font-size: 0.95em" data-aos="fade-up">
+          예식장 주차 공간이 협소하여 만차일 경우가 많습니다.<br />
+          가급적 대중교통 이용을 권장해 드리며, 자가용 이용 시<br />
+          안내된 주변 주차장을 이용해 주시면 더욱 편리합니다.
+        </p>
+
+        <h4 data-aos="fade-up"><strong>주변 주차장</strong></h4>
+        <ul data-aos="fade-up">
+          <li>
+            <strong>제1주차장: 투루파킹 노원하계점 (을지병원 옆)</strong><br />
+            <small>서울특별시 노원구 한글비석로 68</small>
+          </li>
+          <li>
+            <strong>제2주차장: 대진고등학교 주차장</strong><br />
+            <small>서울특별시 노원구 공릉로62가길 47</small>
+          </li>
+          <li>
+            <strong>제3주차장: 용동초등학교 주차장</strong><br />
+            <small>서울특별시 노원구 한글비석로1길 81-11</small>
+          </li>
+          <li>
+            <strong>제4주차장: 하계 테크노타운 주차장</strong><br />
+            <small>서울특별시 노원구 하계동 노원로15길 10</small>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section guestbook">
+      <h2 class="section-title" data-aos="fade-down">축하의 마음을 전해주세요</h2>
+      <form id="guestbook-form" data-aos="fade-up">
+        <input type="text" id="guest-name" placeholder="이름" required />
+        <input type="password" id="guest-password" placeholder="비밀번호" required />
+        <textarea id="guest-message" placeholder="소중한 축하 메시지를 남겨주세요." required></textarea>
+        <button type="submit" class="btn-submit">글 남기기</button>
+      </form>
+      <div id="guestbook-entries" data-aos="fade-up"></div>
+    </section>
   </div>
-</div>
 
-<div class="buttons">
-  <button onclick="prevCard()">Previous</button>
-  <button onclick="flipCard()">Flip</button>
-  <button onclick="nextCard()">Next</button>
-</div>
+  <script src="script.js"></script>
 
-<script>
-const cards = [
-  { front: 'sincere', back: '정직한' },
-  { front: 'region', back: '지역' },
-  { front: 'propose', back: '제안하다' },
-  { front: 'administer', back: '관리하다' },
-  { front: 'annum', back: '연도' },
-  { front: 'determine', back: '결정하다' },
-  { front: 'radiograph', back: '엑스레이' },
-  { front: 'comprehend', back: '이해하다' },
-  { front: 'rely on', back: '신뢰' },
-  { front: 'retain', back: '유지하다' },
-  { front: 'acquire', back: '배우다' },
-  { front: 'development', back: '성장' },
-  { front: 'endeavor', back: '노력' },
-  { front: 'observe', back: '알아차리다' },
-  { front: 'inquiry', back: '질문' },
-  { front: 'strategize', back: '계획하다' },
-  { front: 'significance', back: '가치' },
-  { front: 'concentrate', back: '집중하다' },
-  { front: 'distribute', back: '공유하다' },
-  { front: 'esteem', back: '존경' },
-  { front: 'capability', back: '능력' },
-  { front: 'concept', back: '아이디어' },
-  { front: 'enroll', back: '가입하다' },
-  { front: 'advantage', back: '이익' },
-  { front: 'operate', back: '일하다' },
-  { front: 'contrast', back: '비교하다' },
-  { front: 'propose', back: '제안하다' },
-  { front: 'restrict', back: '한계' },
-  { front: 'crew', back: '팀' },
-  { front: 'propose', back: '제안하다' },
-  { front: 'summon', back: '초대하다' },
-  { front: 'determine', back: '결정하다' },
-  { front: 'requirement', back: '요구하다' },
-  { front: 'initiate', back: '열다' },
-  { front: 'administer', back: '관리하다' },
-  { front: 'esteem', back: '존경' },
-  { front: 'significance', back: '가치' },
-  { front: 'operate', back: '일하다' },
-  { front: 'administer', back: '관리하다' },
-  { front: 'safeguard', back: '보호하다' },
-  { front: 'capability', back: '능력' },
-  { front: 'significance', back: '가치' },
-  { front: 'sincere', back: '정직한' },
-  { front: 'observe', back: '알아차리다' },
-  { front: 'safeguard', back: '보호하다' },
-  { front: 'comprehend', back: '이해하다' },
-  { front: 'contrast', back: '비교하다' },
-  { front: 'vitality', back: '에너지' },
-  { front: 'administer', back: '관리하다' },
-  { front: 'strategize', back: '계획하다' },
+  <script>
+    // --- 지도 좌표 설정 ---
+    const locations = [
+      {
+        title: '테라리움서울 (예식장)',
+        lat: 37.639673,
+        lng: 127.07348,
+        address: '서울특별시 노원구 노원로 247',
+        type: 'wedding',
+      },
+      {
+        title: '제1주차장 투루파킹 노원하계점 (을지병원 옆)',
+        lat: 37.637046,
+        lng: 127.070891,
+        address: '서울 노원구 하계동 282',
+        type: 'parking',
+      },
+      {
+        title: '제2주차장 대진고등학교',
+        lat: 37.637468,
+        lng: 127.075832,
+        address: '서울시 노원구 공릉로 62가길 47',
+        type: 'parking',
+      },
+      {
+        title: '제3주차장 용동초등학교',
+        lat: 37.641492,
+        lng: 127.06946,
+        adress: '서울시 노원구 한글비석로 1길 81-11 (중계동 510-1번지)',
+        type: 'parking',
+      },
+      {
+        title: '제4주차장 하계 테크노타운',
+        lat: 37.641725,
+        lng: 127.071552,
+        adress: '서울시 노원구 노원로 15길 10 (하계동 250-3번지)',
+        type: 'parking',
+      },
+    ];
 
-];
+    const map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(locations[0].lat, locations[0].lng),
+      zoom: 15,
+      minZoom: 12,
+      zoomControl: true,
+      zoomControlOptions: {
+        style: naver.maps.ZoomControlStyle.SMALL,
+        position: naver.maps.Position.TOP_RIGHT,
+      },
+    });
 
-let currentIndex = 0;
-let isFlipped = false;
+    // --- 마커 생성 및 관리 ---
+    const markers = [];
+    const infoWindows = [];
 
-function updateCard() {
-  document.getElementById('cardFront').textContent = cards[currentIndex].front;
-  document.getElementById('cardBack').textContent = cards[currentIndex].back;
-  document.getElementById('flipCard').classList.remove('flipped');
-  isFlipped = false;
-}
+    locations.forEach((location, index) => {
+      // --- 마커 생성 ---
+      let iconContent =
+        location.type === 'wedding'
+          ? '<div style="background-color:#C0A080; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; border:2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">W</div>'
+          : '<div style="background-color:#777; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; border:2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">P</div>';
+      const marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(location.lat, location.lng),
+        map: map,
+        title: location.title,
+        icon: { content: iconContent, anchor: new naver.maps.Point(12, 12) },
+      });
+      const infoWindow = new naver.maps.InfoWindow({
+        content: `<div style="padding:10px; font-size:14px; font-family:'Noto Sans KR', sans-serif;"><b>${location.title}</b></div>`,
+      });
 
-function flipCard() {
-  const card = document.getElementById('flipCard');
-  card.classList.toggle('flipped');
-  isFlipped = !isFlipped;
-}
+      markers.push(marker);
+      infoWindows.push(infoWindow);
+    });
 
-function prevCard() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateCard();
-  }
-}
+    // 마커 클릭 이벤트
+    markers.forEach((marker, index) => {
+      naver.maps.Event.addListener(marker, 'click', () => {
+        if (infoWindows[index].getMap()) {
+          infoWindows[index].close();
+        } else {
+          infoWindows.forEach((iw) => iw.close()); // 다른 정보창은 모두 닫기
+          infoWindows[index].open(map, marker);
+        }
 
-function nextCard() {
-  if (currentIndex < cards.length - 1) {
-    currentIndex++;
-    updateCard();
-  }
-}
+        const addressToCopy = locations[index].address;
+        console.log(addressToCopy);
+        if (navigator.clipboard) {
+          navigator.clipboard
+            .writeText(addressToCopy)
+            .then(() => {
+              showToast('주소가 클립보드에 복사되었습니다.');
+            })
+            .catch((err) => {
+              console.error('주소 복사 실패:', err);
+              showToast('주소 복사에 실패했습니다.');
+            });
+        }
+      });
+    });
 
-updateCard();
-</script>
+    // --- 지도 뷰 업데이트 함수 ---
+    function updateMapView(tabName) {
+      infoWindows.forEach((iw) => iw.close()); // 탭 변경 시 정보창 닫기
 
+      if (tabName === 'directions') {
+        // '오시는 길' 탭: 예식장을 중심으로 확대
+        map.morph(
+          new naver.maps.LatLng(locations[0].lat, locations[0].lng),
+          16,
+        );
+      } else if (tabName === 'parking') {
+        // '주변 주차장' 탭: 모든 주차장이 보이도록 조금 더 넓은 뷰
+        map.morph(
+          new naver.maps.LatLng(locations[0].lat, locations[0].lng),
+          15,
+        );
+      }
+    }
+
+    // 페이지 로드 시 첫 번째 탭을 활성화 상태로 설정
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.tab-button').click();
+    });
+
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast-popup';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.add('show');
+      }, 100);
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          document.body.removeChild(toast);
+        }, 500);
+      }, 2000);
+    }
+
+    const copyButtons = document.querySelectorAll('.copy-button');
+
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const accountNumber = button.dataset.account;
+
+        if (navigator.clipboard) {
+          navigator.clipboard
+            .writeText(accountNumber)
+            .then(() => {
+              showToast('계좌번호가 복사되었습니다.');
+            })
+            .catch((err) => {
+              console.error('계좌번호 복사 실패:', err);
+              showToast('복사에 실패했습니다.');
+            });
+        }
+      });
+    });
+  </script>
+
+
+  <script>
+    AOS.init();
+  </script>
 </body>
+
 </html>
