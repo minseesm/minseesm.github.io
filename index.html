@@ -377,6 +377,17 @@
 
 
   <script>
+    // --vh라는 CSS 변수를 설정하는 함수
+    const setVh = () => {
+      // window.innerHeight는 주소창 등을 제외한 실제 보이는 영역의 높이를 픽셀 단위로 알려줍니다.
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+    }
+
+    // 페이지가 처음 로드될 때 함수를 실행합니다.
+    setVh();
+
+    // 화면 크기가 변경될 때 (예: 모바일 기기 가로/세로 전환) 다시 실행합니다.
+    window.addEventListener('resize', setVh);
     AOS.init();
   </script>
 </body>
